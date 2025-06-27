@@ -1,0 +1,326 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333333;
+}
+
+/* Auth Container */
+.auth-container {
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+}
+
+/* Common Form Styles */
+.signup-container,
+.login-container {
+    background-color: #F8F9FA;
+    padding: 2rem;
+    border-radius: 24px;
+    border: 1px solid #E0E0E0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+    margin: 20px auto;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header Styles */
+.form-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.form-header .auth-icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.form-header h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #222222;
+    margin-bottom: 0.5rem;
+}
+
+.form-header p {
+    font-size: 0.9rem;
+    color: #666666;
+    margin-bottom: 0;
+}
+
+/* Form Group Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #222222;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #333333;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    border-color: #00AEEF;
+    box-shadow: 0 0 0 3px rgba(0, 174, 239, 0.2);
+    outline: none;
+}
+
+.form-group small {
+    display: block;
+    font-size: 0.75rem;
+    color: #666666;
+    margin-top: 0.5rem;
+}
+
+/* Password Input Group */
+.password-group {
+    margin-bottom: 1.5rem;
+}
+
+.password-group .password-input {
+    position: relative;
+}
+
+.password-group .password-input input {
+    width: 100%;
+    padding: 0.75rem 40px 0.75rem 1rem; /* Right padding for icon */
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+}
+
+.password-group .password-input i {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666666;
+    transition: color 0.3s ease;
+    background: none;
+    border: none;
+    padding: 8px; /* Makes click area larger */
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.password-group .password-input i:hover {
+    color: #00AEEF;
+}
+
+/* Submit Button Styles */
+.submit-btn {
+    width: 100%;
+    padding: 0.85rem;
+    background-color: #00AEEF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.submit-btn:hover {
+    background-color: #0088CC;
+}
+
+.submit-btn .btn-text {
+    position: relative;
+    z-index: 2;
+}
+
+.submit-btn .loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 3px solid #FFFFFF;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    opacity: 0;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.submit-btn.loading .btn-text {
+    opacity: 0;
+}
+
+.submit-btn.loading .loading-spinner {
+    opacity: 1;
+}
+
+/* Form Footer Styles */
+.form-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #666666;
+}
+
+.form-footer a {
+    color: #00AEEF;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.form-footer a:hover {
+    color: #0074D9;
+    text-decoration: underline;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #FFFFFF;
+    padding: 2rem;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 350px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-content h3 {
+    font-size: 1.5rem;
+    color: #222222;
+    margin-bottom: 0.5rem;
+}
+
+.modal-content p {
+    font-size: 0.9rem;
+    color: #666666;
+    margin-bottom: 1.5rem;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-align: center;
+    letter-spacing: 0.5rem;
+}
+
+/* Message Styles */
+.message {
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    display: none;
+}
+
+.message.success {
+    background-color: #22C55E;
+    color: #FFFFFF;
+    display: block;
+}
+
+.message.error {
+    background-color: #EF4444;
+    color: #FFFFFF;
+    display: block;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+    .signup-container,
+    .login-container {
+        padding: 1.5rem;
+        margin: 20px 15px;
+        width: calc(100% - 30px);
+    }
+    
+    .form-header .auth-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .form-header h2 {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2FA Authentication System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="auth-container">
+        <!-- Signup Container -->
+        <div class="signup-container" id="signupContainer">
+            <div class="form-header">
+                <img src="authentication-icon.png" alt="2FA Icon" class="auth-icon">
+                <h2>Sign Up for 2FA</h2>
+                <p>Secure your account with two-factor authentication.</p>
+            </div>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group password-group">
+                    <label for="password">Password</label>
+                    <div class="password-input">
+                        <input type="password" id="password" name="password" placeholder="Create a password" required>
+                        <i class="fas fa-eye" id="togglePassword"></i>
+                    </div>
+                    <small>Use at least 8 characters with a mix of letters, numbers, and symbols.</small>
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
+                </div>
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span class="btn-text">Sign Up</span>
+                    <span class="loading-spinner"></span>
+                </button>
+                <div class="form-footer">
+                    <p>Already have an account? <a href="#" id="showLogin">Log in</a></p>
+                </div>
+            </form>
+        </div>
+
+        <!-- Login Container -->
+        <div class="login-container" id="loginContainer" style="display: none;">
+            <div class="form-header">
+                <img src="authentication.icon.png" alt="2FA Icon" class="auth-icon">
+                <h2>Login with 2FA</h2>
+                <p>Secure login with two-factor authentication.</p>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group password-group">
+                    <label for="loginPassword">Password</label>
+                    <div class="password-input">
+                        <input type="password" id="loginPassword" name="password" placeholder="Enter your password" required>
+                        <i class="fas fa-eye" id="toggleLoginPassword"></i>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn" id="loginBtn">
+                    <span class="btn-text">Login</span>
+                    <span class="loading-spinner"></span>
+                </button>
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="#" id="showSignup">Sign up</a></p>
+                </div>
+            </form>
+        </div>
+
+        <!-- OTP Verification Modal -->
+        <div class="modal" id="otpModal" style="display: none;">
+            <div class="modal-content">
+                <h3>Verify OTP</h3>
+                <p>Enter the 6-digit code sent to your email</p>
+                <input type="text" id="otpCode" placeholder="Enter OTP" maxlength="6">
+                <button id="verifyOtpBtn" class="submit-btn">Verify</button>
+                <p id="otpMessage" class="message"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
